@@ -99,7 +99,8 @@ static int driver_entry(void){
  }
  major_number = MAJOR(dev_num); //extracts the major number and store in our variable (MACRO)
  printk(KERN_INFO "soliduscode: major number is %d",major_number);
- printk(KERN_INFO "\tuse \"mknod /dev/%s c %d 0\" for device file",DEVICE_NAME,major_number); //dmesg
+ printk(KERN_INFO "\tuse \"mknod /dev/%s c %d 0\" for device file",DEVICE_NAME,major_number);
+ //dmesg
  //step(2)
  mcdev = cdev_alloc(); //create our cdev structure, initialized our cdev
  mcdev->ops = &fops;  //struct file_operations
